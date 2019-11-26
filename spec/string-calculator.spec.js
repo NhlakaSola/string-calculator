@@ -31,5 +31,3 @@ describe("string calculator to add numbers", function () {
 
 
 });
-
-console.log(calculator.Add("//;\n1;2"));

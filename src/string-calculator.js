@@ -8,13 +8,9 @@ module.exports = class StringCalculator{
         if (string == "") {
             return 0;
         }else{       
-            try {
-                if (/-/.test(string) == true) {
-                    throw "negatives are not allowed";
-
-                }
-            } catch (error) {
-                return error;
+        
+            if (/-/.test(string) == true) {
+                throw new Error("negatives are not allowed");
             }
             let res = string.match(/\d{1,}/g); //only match digits only
             for (let i = 0; i < res.length; i++) {

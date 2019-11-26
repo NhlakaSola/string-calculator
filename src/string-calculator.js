@@ -7,14 +7,20 @@ module.exports = class StringCalculator{
 
         if (string == "") {
             return 0;
-        }else{       
-        
-            if (/-/.test(string) == true) {
-                throw new Error("negatives are not allowed");
+        }else{      
+            let negatives = ""; 
+            for (let i = 0; i < string.length; i++) {
+                if (string[i] === "-" && !isNaN(string[i+1])) {
+                    negatives += " -" + string[i+1]; 
+                }
             }
+            if (negatives != "") {
+                throw new Error("negatives are not allowed" + negatives); 
+            }
+
             let res = string.match(/\d{1,}/g); //only match digits only
-            for (let i = 0; i < res.length; i++) {
-                let converted = parseInt(res[i]); 
+            for (let j = 0; j < res.length; j++) {
+                let converted = parseInt(res[j]); 
                  
                 if (converted >= 1000) {
                     converted = 0; 

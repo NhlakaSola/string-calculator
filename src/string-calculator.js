@@ -9,9 +9,10 @@ module.exports = class StringCalculator{
             return 0;
         }else{      
             let negatives = ""; 
-            for (let i = 0; i < string.length; i++) {
-                if (string[i] === "-" && !isNaN(string[i+1])) {
-                    negatives += " -" + string[i+1]; 
+            let nums = string.split(',');
+            for (let i = 0; i < nums.length; i++) {
+                if (nums[i][0] === "-") {
+                    negatives += " " + nums[i]; 
                 }
             }
             if (negatives != "") {

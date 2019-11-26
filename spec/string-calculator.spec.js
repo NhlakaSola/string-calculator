@@ -21,7 +21,7 @@ describe("string calculator to add numbers", function () {
     });
 
     it("should throw an error when negatives are passed", function () {
-        expect(() => calculator.Add("1002,-23")).toThrowError("negatives are not allowed -2");
+        expect(() => calculator.Add("1002,-23")).toThrowError("negatives are not allowed -23");
     });
 
     
